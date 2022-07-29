@@ -1,0 +1,7 @@
+{
+  "name": "protoLogin-01",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

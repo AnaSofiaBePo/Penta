@@ -1,0 +1,83 @@
+ion-content {
+  font-family: "Baloo 2", cursive;
+  font-size: 1rem;
+  background: #f8f8f8 !important;
+}
+
+ion-list {
+  width: 85%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #888bae;
+  border-radius: 15px;
+  align-content: center;
+  margin: 11% auto;
+}
+
+ion-label.register-container-logo {
+  width: 20%;
+  margin-top: -1em;
+  display: flex;
+  justify-content: center;
+}
+
+ion-label.register-title {
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+img {
+  width: 4.2em;
+}
+
+ion-label.register-container-label {
+  padding-top: 0.5em;
+  width: 80%;
+}
+
+ion-input {
+  --background: #f7f7f8;
+  border: solid 1px #888bae;
+  border-radius: 0.5em;
+  --color: var(--ion-color-primary);
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.19);
+  font-family: "Baloo 2", cursive;
+  font-weight: 400;
+  --placeholder-color: var(--ion-color-primary-tint);
+  --placeholder-font-style: "Baloo 2", cursive;
+  --padding-start: 0.9em;
+  width: 100%;
+  height: 80%;
+}
+
+ion-label.register-container-button {
+  margin-top: 0.9em;
+  width: 80%;
+}
+ion-button.register-button {
+  font-family: "Baloo 2", cursive;
+  font-size: 1em;
+  width: 100%;
+  text-transform: capitalize;
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 19%), -1px 2px 5px #070b396e;
+}
+
+ion-label.register-label-login {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 0.5em;
+  ion-text {
+    font-size: 1em;
+  }
+  p {
+    padding-left: 0.2em;
+    color: #6a6c7a;
+    font-size: 1em;
+  }
+}

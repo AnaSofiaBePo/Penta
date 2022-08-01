@@ -1,0 +1,50 @@
+<ion-content>
+  <ion-list>
+    <ion-label class="login-container-logo">
+      <img src="../assets/images/logoProto.svg" />
+    </ion-label>
+
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="loginButton(email,password)">
+      <ion-label class="login-title" color="primary"
+        >To begin, log in to your account.
+      </ion-label>
+      <ion-label class="login-container-label">
+        <ion-input formControlName="email" placeholder="Email" type="text" #email></ion-input>
+      </ion-label>
+      <ion-label class="login-container-label">
+        <ion-input
+          formControlName="password"
+          placeholder="Password"
+          type="password"
+          #password
+        ></ion-input>
+      </ion-label>
+      <ion-label class="login-container-button ion-align-items-center">
+        <ion-button
+          class="ion-align-items-center login-button"
+          fill="solid"
+          type="submit"
+          [disabled]="!loginForm.valid || lockLogInButton"
+          >Login</ion-button
+        >
+      </ion-label>
+      <ion-note color="danger" class="login-message-error-form"
+      *ngIf="loginForm.get('password').value && loginForm.get('password').invalid">
+      Debe tener mayúscula, carácter especial, números y longitud de 8 caracteres
+    </ion-note>
+    </form>
+
+    <ion-label class="login-label-forgot-password">
+      <ion-text class="login-text-forgot-password" color="secondary"
+        >Lost your password?
+      </ion-text>
+    </ion-label>
+
+    <ion-label class="login-label-register">
+      <ion-text>Don't have an account?</ion-text>
+      <ion-button size="small" fill="clear" color="tertiary"
+        >Sing up</ion-button
+      >
+    </ion-label>
+  </ion-list>
+</ion-content>

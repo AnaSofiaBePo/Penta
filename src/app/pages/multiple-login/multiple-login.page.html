@@ -1,0 +1,81 @@
+<ion-content>
+  <ion-label class="multiple-login-button-register" color="primary" routerLink="/register">Register</ion-label>
+  <ion-list>
+
+    <ion-label class="login-title">
+      Shoose a photo to
+      Log in
+    </ion-label>
+
+  </ion-list>
+  <ion-accordion-group class="group1" #accordionGroup4 expand="inset">
+    <ion-accordion class="group1" toggleIcon="lock-closed" toggleIconSlot="start">
+      <ion-label class="according-header-first" slot="header">
+        <ion-label class="login-photo-container-photo">
+          <ion-thumbnail>
+            <img src="../assets/images/user01.svg" />
+          </ion-thumbnail>
+        </ion-label>
+      </ion-label>
+      <div class="ion-padding" slot="content">
+        <ion-label class="login-container-label">
+          <ion-input placeholder="Email"></ion-input>
+        </ion-label>
+        <ion-label class="login-container-label">
+          <ion-input placeholder="Password"></ion-input>
+        </ion-label>
+        <ion-label class="login-container-button ion-align-items-center">
+          <ion-button class="ion-align-items-center login-button button-first" fill="solid">Login</ion-button>
+        </ion-label>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion class="group2" toggleIcon="lock-closed" toggleIconSlot="start">
+      <ion-label class="according-header-second" slot="header">
+        <ion-label class="login-photo-container-photo">
+          <ion-thumbnail>
+            <img src="../assets/images/user02.svg" />
+          </ion-thumbnail>
+        </ion-label>
+      </ion-label>
+      <div class="ion-padding" slot="content">
+        <ion-label class="login-container-label">
+          <ion-input placeholder="Email"></ion-input>
+        </ion-label>
+        <ion-label class="login-container-label">
+          <ion-input placeholder="Password"></ion-input>
+        </ion-label>
+        <ion-label class="login-container-button ion-align-items-center">
+          <ion-button class="ion-align-items-center login-button button-second" fill="solid">Login</ion-button>
+        </ion-label>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion class="group3" toggleIcon="lock-closed" toggleIconSlot="start">
+      <ion-label class="group3" class="according-header-third" slot="header">
+        <ion-label class="login-photo-container-photo">
+          <ion-thumbnail>
+            <img src="../assets/images/user03.svg" />
+          </ion-thumbnail>
+        </ion-label>
+      </ion-label>
+      <div class="ion-padding" slot="content">
+        <ion-label class="login-container-label">
+          <ion-input placeholder="Email"></ion-input>
+        </ion-label>
+        <ion-label class="login-container-label">
+          <ion-input placeholder="Password"></ion-input>
+        </ion-label>
+        <ion-label class="login-container-button ion-align-items-center">
+          <ion-button class="ion-align-items-center login-button button-third" fill="solid">Login</ion-button>
+        </ion-label>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+
+
+
+
+
+</ion-content>

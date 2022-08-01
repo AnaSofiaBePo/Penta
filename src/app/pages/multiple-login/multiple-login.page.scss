@@ -1,0 +1,261 @@
+ion-content {
+  font-family: "Baloo 2", cursive;
+  font-size: 1rem;
+  background: #f8f8f8 !important;
+}
+
+ion-label.multiple-login-button-register {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  font-weight: 500;
+  padding-right: 2.5em;
+  padding-top: 3em;
+}
+
+ion-list {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: var(--ion-color-primary);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: solid 2px #fff175;
+  border-radius: 15px;
+  align-content: center;
+  margin: 1em auto;
+  background-color: transparent;
+}
+
+ion-label.login-title{
+  margin-top: 0.75em;
+}
+
+ion-label.container-login-photo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ion-color-tertiary);
+  margin-top: -40em;
+  width: 100%;
+  height: 50%;
+  border: solid 3px #ffffff;
+  border-radius: 0.63em;
+}
+
+ion-label.container-login-photo-small {
+  height: 20%;
+  ion-label.login-container-label {
+    padding-top: 0.5em;
+    width: 80%;
+    visibility: collapse;
+  }
+  ion-label.login-photo-container-photo {
+    margin-top: 13em;
+  }
+  ion-icon {
+    margin-top: 0.3em;
+  }
+  ion-label.container-inputs {
+    visibility: collapse;
+  }
+}
+
+ion-label.login-photo-container-photo {
+  display: flex;
+  flex-direction: row;
+  height: 10em;
+  width: 22em;
+  align-items: center;
+  justify-content: center;
+
+  ion-thumbnail {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 253, 253, 0.1) 0%,
+      rgba(255, 255, 255, 0.0562027) 39.58%,
+      rgba(255, 255, 255, 0.0299672) 78.65%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    border: 5px solid rgba(255, 255, 255, 0.18);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    --size: 100px;
+    //   margin-bottom: 1.5em;
+  }
+}
+
+ion-icon {
+  font-size: 1.8em;
+  font-size: 1.8em;
+  margin-left: 6.5em;
+  position: absolute;
+}
+
+ion-label.container-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.5em;
+}
+
+ion-label.login-container-label {
+  padding-top: 0.7em;
+  width: 85%;
+}
+
+ion-input {
+  --background: #f7f7f8;
+  border: solid 1px #160c42;
+  border-radius: 0.5em;
+  --color: var(--ion-color-primary);
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.19);
+  font-family: "Baloo 2", cursive;
+  font-weight: 400;
+  --placeholder-color: var(--ion-color-primary-tint);
+  --placeholder-font-style: "Baloo 2", cursive;
+  --padding-start: 0.9em;
+  width: 100%;
+  height: 2.8em;
+}
+
+ion-label.login-container-button {
+  margin-top: 0.5em;
+  width: 85%;
+}
+
+ion-button.login-button {
+  --background: #5821df;
+  font-family: "Baloo 2", cursive;
+  font-size: 1em;
+  width: 100%;
+  text-transform: capitalize;
+  border-radius: 0.5em;
+  box-shadow: 0px 4px 10px hsl(0deg 0% 13% / 50%),
+    0px 2px 5px hsl(240deg 83% 66% / 15%);
+}
+
+ion-label.login-label-forgot-password {
+  margin-top: 0.5em;
+  ion-text {
+    font-size: 0.9em;
+    color: #20c3ab;
+  }
+}
+
+ion-label.according-header-first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #5821df;
+}
+ion-label.according-header-second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff175;
+}
+ion-label.according-header-third {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ion-color-secondary);
+}
+
+ion-accordion-group.group1 {
+  width: 95%;
+  position: absolute;
+  margin-left: 0.6em;
+  margin-top: -44.5em;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #160c42;
+
+  ion-button.button-first {
+    --background: #5821df;
+  }
+  ion-button.button-second {
+    --background: #fff175;
+    --color: var(--ion-color-primary);
+  }
+  ion-button.button-third {
+    --background: var(--ion-color-secondary);
+    font-family: "Baloo 2", cursive;
+    font-size: 1em;
+    font-weight: 600;
+  }
+}
+
+ion-accordion-group.group2 {
+  width: 95%;
+  // position: absolute;
+  // margin-top: -23.5em;
+  margin-left: 0.6em;
+}
+ion-accordion-group.group3 {
+  width: 95%;
+  margin-left: 0.6em;
+}
+ion-accordion-group.group4 {
+  width: 95%;
+  margin-top: 0.5em;
+  margin-left: 0.6em;
+}
+
+// ion-accordion {
+//   margin: 0 auto;
+// }
+
+// ion-accordion.group1.accordion-expanding,
+// ion-accordion.group1.accordion-expanded {
+//   width: calc(100% - -2px);
+//   margin-top: -8em;
+// }
+
+// ion-accordion.group1.accordion-collapsing ion-label[slot="header"],
+// ion-accordion.group1.accordion-collapsed ion-label[slot="header"] {
+//   --background: var(--ion-color-light);
+//   --color: var(--ion-color-light-contrast);
+// }
+
+// ion-accordion.group1.accordion-expanding ion-label[slot="content"],
+// ion-accordion.group1.accordion-expanded ion-label[slot="content"] {
+//   height: 400px;
+//   // --color: var(--ion-color-primary-contrast);
+// }
+
+ion-accordion.group2.accordion-expanding,
+ion-accordion.group2.accordion-expanded {
+  width: calc(100% - -2px);
+  margin-top: -8em;
+}
+ion-accordion.group3.accordion-expanding,
+ion-accordion.group3.accordion-expanded {
+  width: calc(100% - -2px);
+  margin-top: -8em;
+}
+
+// ion-accordion.group2.accordion-collapsing ion-label[slot="header"],
+// ion-accordion.group2.accordion-collapsed ion-label[slot="header"] {
+// }
+
+ion-accordion.group2.accordion-expanding ion-label[slot="content"],
+ion-accordion.group2.accordion-expanded ion-label[slot="content"] {
+  height: 200px;
+  // --color: var(--ion-color-primary-contrast);
+}

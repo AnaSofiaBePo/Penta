@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertsService } from '../services/alerts.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +9,11 @@ import { AlertsService } from '../services/alerts.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  constructor(private alerts: AlertsService, private auth: AuthService, private router: Router) {}
 
-  constructor(private alerts: AlertsService
-  ) {}
-
-  present(){
-    this.alerts.presentLoading();
-  }
-
-  close(){
-    this.alerts.closeLoading();
+  logOut() {
+    this.auth.logOut();
+    this.alerts.presentToastSuccess('Se ha cerrado la sesión exitosamente');
+    this.router.navigate(['/login']);
   }
 }

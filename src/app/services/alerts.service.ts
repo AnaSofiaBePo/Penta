@@ -15,7 +15,7 @@ export class AlertsService {
   async presentToast(message) {
     const toast = await this.toastController.create({
       message,
-      duration: 3000,
+      duration: 2000,
       icon: 'close-circle-outline',
       position: 'top',
       cssClass: 'toastWarning',
@@ -48,4 +48,6 @@ export class AlertsService {
       this.loading.dismiss();
     }
   }
+
+
 }

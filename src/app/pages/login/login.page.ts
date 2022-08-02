@@ -9,7 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Route, Router } from '@angular/router';
-import { IonInput } from '@ionic/angular';
+import { IonInput, MenuController } from '@ionic/angular';
 import { AlertsService } from 'src/app/services/alerts.service';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -21,19 +21,25 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
   lockLogInButton = false;
+  fieldTextType = false;
 
   constructor(
     public formBuilder: FormBuilder,
     private auth: AuthService,
     private alerts: AlertsService,
     private router: Router,
+    private menuController: MenuController
   ) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, this.passwordValidator()]),
     });
+
+    if (this.menuController) {
+      this.menuController.swipeGesture(false,'menu-content');
+    }
   }
 
   passwordValidator(): ValidatorFn {
@@ -50,19 +56,23 @@ export class LoginPage implements OnInit {
     };
   }
 
+  toggleFieldTextType(_event) {
+    this.fieldTextType = !this.fieldTextType;
+  }
+
   async loginButton(email: IonInput, password: IonInput) {
     console.log(email.value, password.value);
     await this.alerts.presentLoading();
     const res = await this.auth
       .login(email.value.toLocaleString(), password.value.toLocaleString())
       .catch(async (error) => {
-        await this.alerts.presentToast('Email o contrasena invalida');
+        await this.alerts.presentToast('Email o contraseña inválida');
         this.alerts.closeLoading();
       });
     if (res) {
-      await this.alerts.presentToastSuccess('Ha iniciado sesion correctamente');
+      await this.alerts.presentToastSuccess('Ha iniciado sesión correctamente');
       this.alerts.closeLoading();
-      if(this.alerts.closeLoading){
+      if (this.alerts.closeLoading) {
         this.router.navigate(['/home']);
       }
     }

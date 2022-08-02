@@ -17,6 +17,28 @@ ion-list {
   margin: 11% auto;
 }
 
+form.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+ion-icon.icon-inputs{
+  color:#483794;
+}
+
+
+ion-note.register-message-error-form {
+  text-align: center;
+  padding-top: 1em;
+  width: 85%;
+  transition: all 500ms cubic-bezier(0.54, 0.26, 1, 1) 0s;
+      color: var(--ion-color-danger);
+}
+
+
 ion-label.register-container-logo {
   width: 20%;
   margin-top: -1em;

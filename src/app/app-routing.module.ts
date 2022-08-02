@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'multiple-login',
     loadChildren: () => import('./pages/multiple-login/multiple-login.module').then( m => m.MultipleLoginPageModule)
   },
+  {
+    path: 'crud',
+    loadChildren: () => import('./pages/crud/crud.module').then( m => m.CrudPageModule)
+  },
 ];
 
 @NgModule({

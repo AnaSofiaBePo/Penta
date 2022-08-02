@@ -3,25 +3,60 @@
     <ion-label class="register-container-logo">
       <img src="../assets/images/logoProto.svg" />
     </ion-label>
-    <ion-label class="register-title" color="primary">Create your account</ion-label>
-    <ion-label class="register-container-label">
-      <ion-input placeholder="Name"></ion-input>
-    </ion-label>
-    <ion-label class="register-container-label">
-      <ion-input placeholder="Email"></ion-input>
-    </ion-label>
-    <ion-label class="register-container-label">
-      <ion-input placeholder="Password"></ion-input>
-    </ion-label>
-
-    <ion-label class="register-container-button ion-align-items-center">
-      <ion-button class="ion-align-items-center register-button" fill="solid">Register</ion-button>
-    </ion-label>
+    <form
+      class="login-form"
+      [formGroup]="registerForm"
+      (ngSubmit)="registerButton(name,email,password)"
+    >
+      <ion-label class="register-title" color="primary"
+        >Create your account
+      </ion-label>
+      <ion-label class="register-container-label">
+        <ion-input
+          formControlName="name"
+          placeholder="name"
+          type="text"
+          #name
+        >
+      <ion-icon class="ion-padding-start icon-inputs" name="person" slot="start"></ion-icon>
+      </ion-input>
+      </ion-label>
+      <ion-label class="register-container-label">
+        <ion-input
+          formControlName="email"
+          placeholder="Email"
+          type="text"
+          #email
+        >
+        <ion-icon class="ion-padding-start icon-inputs" name="at" slot="start"></ion-icon></ion-input>
+      </ion-label>
+      <ion-label class="register-container-label">
+        <ion-input
+          formControlName="password"
+          placeholder="Password"
+          type="password"
+          #password
+        > <ion-icon class="ion-padding-start icon-inputs" name="lock-closed" slot="start"></ion-icon>
+      </ion-input>
+      </ion-label>
+      <ion-label class="register-container-button ion-align-items-center">
+        <ion-button
+          class="ion-align-items-center register-button"
+          fill="solid"
+          type="submit"
+          [disabled]="!registerForm.valid || lockLogInButton"
+          >Register</ion-button
+        >
+      </ion-label>
+      <ion-note class="register-message-error-form"
+      *ngIf="registerForm.get('password').value && registerForm.get('password').invalid">
+      Debe tener mayúscula, carácter especial, números y longitud de 8 caracteres
+    </ion-note>
+    </form>
 
     <ion-label class="register-label-login">
-      <ion-text color="secondary">Log in</ion-text>
+      <ion-text color="secondary" routerLink="/login">Log in</ion-text>
       <p>if you have an account</p>
     </ion-label>
-
   </ion-list>
 </ion-content>

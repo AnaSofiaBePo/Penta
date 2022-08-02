@@ -10,6 +10,11 @@ import {
 export class FireStoreService {
   constructor(private firestore: AngularFirestore) {}
 
+  createDoc(data: any, path: string, id: string) {
+    const collection = this.firestore.collection(path);
+    return collection.doc(id).set(data);
+  }
+
   getCollection() {
     console.log('Antes de leer');
     this.firestore

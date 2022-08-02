@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertsService } from '../services/alerts.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private alerts: AlertsService
+  ) {}
 
+  present(){
+    this.alerts.presentLoading();
+  }
+
+  close(){
+    this.alerts.closeLoading();
+  }
 }

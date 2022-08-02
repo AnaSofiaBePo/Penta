@@ -32,7 +32,50 @@ ion-label.according-header-second[slot="header"] {
     background: #FFF173;
   }
 
+  // #160c42
   div[slot="content"] {
     background: #FFF173;
   }
+ion-toast.toastWarning{
+  --background: white;
+  --border-color:  #160c42;
+  --border-radius: 20px;
+  --border-width: 2px;
+  --border-style: solid;
+  --color:#160c42;
+}
+ion-toast.toastWarning::part(icon) {
+  color: var(--ion-color-danger-tint);
+  font-weight: 500;
+  font-size: 24px;
+}
+ion-toast.toastWarning::part(message) {
+ font-family: "Baloo 2", cursive;
+ font-weight: 500;
+ font-size: 18px;
+}
+
+ion-toast.toastSuccess{
+  --background: white;
+  --border-color:  #160c42;
+  --border-radius: 20px;
+  --border-width: 2px;
+  --border-style: solid;
+  --color:#160c42;
+}
+ion-toast.toastSuccess::part(icon) {
+  color: var(--ion-color-success-tint);
+  font-weight: 500;
+}
+ion-toast.toastSuccess::part(message) {
+ font-family: "Baloo 2", cursive;
+ font-weight: 500;
+ font-size: 18px;
+}
+
+ion-loading.loadingofLogin {
+  --background: #ece9fb;
+  --spinner-color: #160c42;
+}
+
   

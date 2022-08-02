@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'multiple-login',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {

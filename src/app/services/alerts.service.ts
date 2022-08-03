@@ -34,20 +34,19 @@ export class AlertsService {
     toast.present();
   }
 
-  async presentLoading() {
+  async presentLoading(message: string) {
     this.loading = await this.loadingController.create({
       mode: 'ios',
+      message,
       spinner: 'bubbles',
       cssClass: 'loadingofLogin',
     });
     await this.loading.present();
   }
 
-  closeLoading(){
-    if(this.loading){
+  closeLoading() {
+    if (this.loading) {
       this.loading.dismiss();
     }
   }
-
-
 }

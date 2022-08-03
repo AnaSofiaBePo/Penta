@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'crud',
     loadChildren: () => import('./pages/crud/crud.module').then( m => m.CrudPageModule)
   },
+  {
+    path: 'settings',
+    loadChildren: () => import('./backend/settings/settings.module').then( m => m.SettingsPageModule)
+  },
 ];
 
 @NgModule({

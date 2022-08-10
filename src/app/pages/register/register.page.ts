@@ -8,9 +8,12 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonInput, MenuController } from '@ionic/angular';
 import { UserI } from 'src/app/models/user.models';
+import { AlertsService } from 'src/app/services/alerts.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { FireStoreService } from 'src/app/services/fire-store.service';
 
 @Component({
   selector: 'app-register',
@@ -22,6 +25,7 @@ export class RegisterPage implements OnInit {
     name: '',
     email: '',
     uid: '',
+    id: '',
     password: '',
     profile: 'user',
     profilePhoto: '',
@@ -32,7 +36,10 @@ export class RegisterPage implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     private auth: AuthService,
-    private menuController: MenuController
+    private menuController: MenuController,
+    private alerts: AlertsService,
+    private dataBase: FireStoreService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -60,18 +67,27 @@ export class RegisterPage implements OnInit {
     };
   }
 
-  registerButton(name: IonInput, email: IonInput, password: IonInput) {
+  async registerButton(name: IonInput, email: IonInput, password: IonInput) {
+    await this.alerts.presentLoading('Registrando...');
     this.dataUser.name = name.value.toLocaleString();
     this.dataUser.email = email.value.toLocaleString();
     this.dataUser.password = password.value.toLocaleString();
     this.auth
       .registerUser(this.dataUser)
-      .then((res) => {
-        console.log(res, 'exito al crear usuario');
+      .then(async (res) => {
+        this.alerts.closeLoading();
+        this.alerts.presentToastSuccess('Registro exitoso');
+        const id = res.user.uid ;
         const path = 'users';
-        const id = res.user.uid;
+        this.dataUser.id = id;
+        this.dataUser.uid = id;
+        this.dataUser.password = null;
+       await this.dataBase.createDoc(this.dataUser, path, id);
+       this.router.navigate(['/login']);
       })
       .catch((err) => {
+        this.alerts.closeLoading();
+        this.alerts.presentToast('Ha ocurrido un error');
         console.log(err, 'error');
       });
   }

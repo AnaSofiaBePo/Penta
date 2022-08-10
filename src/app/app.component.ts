@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController, NavController } from '@ionic/angular';
+import { AlertsService } from './services/alerts.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +10,9 @@ import { MenuController, NavController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private menuController: MenuController, private navController: NavController) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
 }

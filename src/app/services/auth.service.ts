@@ -13,11 +13,18 @@ export class AuthService {
     return this.auth.signInWithEmailAndPassword(email, password);
   }
 
+  stateAuth() {
+    return this.auth.authState;
+  }
+
   logOut() {
     this.auth.signOut();
   }
 
-  registerUser(dataUser: UserI){
-    return this.auth.createUserWithEmailAndPassword(dataUser.name, dataUser.password);
+  registerUser(dataUser: UserI) {
+    return this.auth.createUserWithEmailAndPassword(
+      dataUser.email,
+      dataUser.password
+    );
   }
 }

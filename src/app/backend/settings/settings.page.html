@@ -1,19 +1,51 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>settings</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menu-content"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <ion-card>
     <ion-card-content>
       <ion-card-header>
         <ion-card-title>Settings</ion-card-title>
       </ion-card-header>
-      <ion-button (click)="createNewUser()" color="primary" size="medium"
-      > Crear usuario</ion-button>
+
+      <form class="user-form" [formGroup]="createUserForm" (ngSubmit)="createNewUser(name, email, password)">
+        <ion-label class="user-container-label label-name">
+          <ion-input clearInput="true" formControlName="name" placeholder="Name" type="text" #name>
+          </ion-input>
+        </ion-label>
+        <ion-label class="user-container-label label-email">
+          <ion-input clearInput="true" formControlName="email" placeholder="Email" type="text" #email>
+          </ion-input>
+        </ion-label>
+
+        <ion-label class="user-container-label label-password">
+          <ion-input formControlName="password" placeholder="Password" [type]="fieldTextType ? 'text' : 'password'"
+            #password>
+          </ion-input>
+          <ion-buttons class="ion-padding-end" slot="end">
+            <ion-button class="button-eye" [ngClass]="{
+        'register--icon-eye-off': !fieldTextType,
+        'register--icon-eye': fieldTextType
+      }" (click)="toggleFieldTextType($event)">
+              <ion-icon *ngIf="!fieldTextType" slot="icon-only" class="register--icon-eye" name="eye" color="primary">
+              </ion-icon>
+              <ion-icon *ngIf="fieldTextType" slot="icon-only" class="register--icon-eye-off" name="eye-off"
+                color="primary"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-label>
+
+        <ion-label class="user-container-button">
+          <ion-button class="user-button ion-text-capitalize" fill="solid" type="submit">Crear usuario</ion-button>
+        </ion-label>
+      </form>
     </ion-card-content>
   </ion-card>
-
 </ion-content>

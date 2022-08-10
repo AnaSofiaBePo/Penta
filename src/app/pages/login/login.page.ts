@@ -61,7 +61,7 @@ export class LoginPage implements OnInit {
   }
 
   async loginButton(email: IonInput, password: IonInput) {
-    console.log(email.value, password.value);
+    // console.log(email.value, password.value);
     await this.alerts.presentLoading('');
     const res = await this.auth
       .login(email.value.toLocaleString(), password.value.toLocaleString())

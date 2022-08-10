@@ -3,15 +3,16 @@
     <ion-label class="login-container-logo">
       <img src="../assets/images/logoProto.svg" />
     </ion-label>
+    
+    <ion-label class="login-title" color="primary"
+      >To begin, log in to your account.
+    </ion-label>
 
     <form
       class="login-form"
       [formGroup]="loginForm"
       (ngSubmit)="loginButton(email,password)"
     >
-      <ion-label class="login-title" color="primary"
-        >To begin, log in to your account.
-      </ion-label>
       <ion-label class="login-container-label label-email">
         <ion-input
           formControlName="email"
@@ -70,7 +71,6 @@
           class="ion-align-items-center login-button"
           fill="solid"
           type="submit"
-          [disabled]="!loginForm.valid || lockLogInButton"
           >Login</ion-button
         >
       </ion-label>

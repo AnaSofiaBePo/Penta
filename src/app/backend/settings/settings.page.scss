@@ -1,0 +1,40 @@
+form{
+
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user-container-label {
+    margin-top: 1.4em;
+    background: #f7f7f8;
+    border: solid 1px #888bae;
+    border-radius: 0.7em;
+    --color: var(--ion-color-primary);
+    box-shadow: 0px 0px 7px rgb(0 0 0 / 19%);
+    font-family: "Baloo 2", cursive;
+    font-weight: 400;
+    --placeholder-color: var(--ion-color-primary-tint);
+    --placeholder-font-style: "Baloo 2", cursive;
+    --padding-start: 0.9em;
+    width: 90%;
+
+}
+
+.label-name,
+.label-email,
+.label-password {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.user-container-button{
+    position: absolute;
+    margin-top: 14rem;
+    margin-right: 11rem;
+}

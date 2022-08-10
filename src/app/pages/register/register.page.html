@@ -3,14 +3,14 @@
     <ion-label class="register-container-logo">
       <img src="../assets/images/logoProto.svg" />
     </ion-label>
+    <ion-label class="register-title" color="primary"
+      >Create your account
+    </ion-label>
     <form
       class="login-form"
       [formGroup]="registerForm"
       (ngSubmit)="registerButton(name,email,password)"
     >
-      <ion-label class="register-title" color="primary"
-        >Create your account
-      </ion-label>
       <ion-label class="register-container-label">
         <ion-input
           formControlName="name"

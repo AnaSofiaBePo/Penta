@@ -15,13 +15,17 @@ export class FireStoreService {
     return collection.doc(id).set(data);
   }
 
-  getCollection() {
-    console.log('Antes de leer');
-    this.firestore
-      .collection('chats')
-      .valueChanges()
-      .subscribe((ref) => {
-        console.log(ref);
-      });
+  getCollection<Tipo>(path: string){
+    const collection = this.firestore.collection<Tipo>(path);
+    return collection.valueChanges();
+  }
+
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  getDataUser<tipo>(path: string, id: string){
+    return  this.firestore.collection(path).doc<tipo>(id).valueChanges();
+  }
+
+  getId(): string{
+    return this.firestore.createId();
   }
 }

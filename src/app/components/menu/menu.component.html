@@ -12,10 +12,11 @@
             *ngIf="!user.profilePhoto"
             name="person-circle-outline"
           ></ion-icon>
-          <ion-avatar  *ngIf="user.profilePhoto" slot="start">
-            <img [src]="user.profilePhoto" />
+          <ion-avatar slot="start">
+            <img src="{{user.profilePhoto}}" />
           </ion-avatar>
           <ion-label>{{ user.email }}</ion-label>
+          <ion-label>{{ user.name}}</ion-label>
         </ion-item>
       </ion-menu-toggle>
 

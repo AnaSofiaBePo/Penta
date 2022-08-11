@@ -13,6 +13,14 @@ export class AuthService {
     return this.auth.signInWithEmailAndPassword(email, password);
   }
 
+  loginP(proveedor: string) {
+    if (proveedor === 'google') {
+      return this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    } else {
+      this.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+    }
+  }
+
   stateAuth() {
     return this.auth.authState;
   }

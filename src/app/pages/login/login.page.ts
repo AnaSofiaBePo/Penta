@@ -77,4 +77,12 @@ export class LoginPage implements OnInit {
       }
     }
   }
+
+loginP(proveedor: string) {
+  this.auth.loginP(proveedor).then((res)=>{
+    console.log(res);
+    this.router.navigate(['/home']);
+  });
+};
+
 }

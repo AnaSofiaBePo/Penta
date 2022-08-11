@@ -41,6 +41,7 @@ export class MenuComponent implements OnInit {
         console.log(user);
         this.isLogged = true;
       this.getDataUser(user.uid);
+      this.user.profilePhoto = user.photoURL;
       }
     });
   }

@@ -1,9 +1,9 @@
 <ion-content>
   <ion-list>
     <ion-label class="login-container-logo">
-      <img src="../assets/images/logoProto.svg" />
+      <img class="logo" src="../assets/images/logoProto.svg" />
     </ion-label>
-    
+
     <ion-label class="login-title" color="primary"
       >To begin, log in to your account.
     </ion-label>
@@ -84,6 +84,19 @@
       </ion-note>
     </form>
 
+    
+    <ion-label class="label-google" (click)="loginP('google')">
+     <ion-text color="primary">
+      Iniciar sesion con
+     </ion-text> 
+      <ion-thumbnail>
+        <ion-img
+          class="img-google"
+          src="../assets/images/google-logo.png"
+        ></ion-img>
+      </ion-thumbnail>
+    </ion-label>
+
     <ion-label class="login-label-forgot-password">
       <ion-text class="login-text-forgot-password" color="secondary"
         >Lost your password?
@@ -100,5 +113,15 @@
         >Sing up</ion-button
       >
     </ion-label>
+
+    <!-- <ion-label class="prueba">
+      Hnadfskdfds;fgdfffffgljglklkgkjfkgjgfsjkgkjj
+
+      <ion-icon slot="start" name="add"></ion-icon>
+    <ion-text>
+      fseakfsregfsrgg
+    </ion-text>
+    </ion-label> -->
+
   </ion-list>
 </ion-content>

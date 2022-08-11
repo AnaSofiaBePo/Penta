@@ -30,7 +30,7 @@ ion-label.login-title {
   margin-bottom: 1em;
 }
 
-img {
+img.logo {
   width: 4.2em;
 }
 
@@ -128,4 +128,22 @@ ion-label.login-label-register {
     font-weight: 500;
     font-family: "Baloo 2", cursive;
   }
+}
+
+ion-label.label-google {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: fit-content;
+}
+
+ion-thumbnail {
+  display: flex;
+  align-items: center;
+  margin-left: 0.3em;
+}
+
+ion-img.img-google {
+  width: 2em;
+  height: 2em;
 }
